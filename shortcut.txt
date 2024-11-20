@@ -1,0 +1,16 @@
+Refactor: ctrl + shift + r
+Show Context Actions: ctrl + .
+Extract method: ctrl + alt + m
+Introduce Constant: ctrl + alt + c
+Introduce Variable: ctrl + alt + v
+Git(Tool Windows): no this shortcut on my mapping
+Terminal: ctrl + `
+Navigate -> Back: alt + left
+Navigate -> Forward: alt + right
+Recent Files: ctrl + e
+Navigate -> Go to File: ctrl + p
+Find In Files: ctrl + f
+Folding -> Expands All: ctrl + k
+Navigate -> Go to Declaration or Usages:  F12
+Select File in Project View: ctrl + k ,e
+Increase Font Size In All Editors: ctrl + +
