@@ -30,19 +30,7 @@ public class WordFrequencyGame {
 
     private List<WordFrequency> getWordFrequencies(List<WordFrequency> wordFrequencies) {
         Map<String, List<WordFrequency>> wordToWordFrequencies = getListMap(wordFrequencies);
-        List<WordFrequency> tempWordFrequencies = new ArrayList<>();
-
-
-        for (Map.Entry<String, List<WordFrequency>> entry : wordToWordFrequencies.entrySet()) {
-            WordFrequency wordFrequency = new WordFrequency(entry.getKey(), entry.getValue().size());
-            tempWordFrequencies.add(wordFrequency);
-        }
-
-
-        wordFrequencies = tempWordFrequencies;
-//                sort the list base on the frequency
-        wordFrequencies.sort((word, nextWord) -> nextWord.getWordCount() - word.getWordCount());
-        return wordFrequencies;
+        return wordToWordFrequencies.entrySet().stream().map(entry -> new WordFrequency(entry.getKey(), entry.getValue().size())).sorted((word, nextWord)->nextWord.getWordCount() - word.getWordCount()).toList();
     }
 
     private static List<WordFrequency> getInitialWordFrequencies(String sentence) {
