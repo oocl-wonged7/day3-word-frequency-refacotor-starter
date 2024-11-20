@@ -16,23 +16,16 @@ public class WordFrequencyGame {
 
                 //get the map for the next step of sizing the same word
                 wordFrequencies = getWordFrequencies(wordFrequencies);
-                StringJoiner joiner = joinResult(wordFrequencies);
 
-
-                return joiner.toString();
+                return joinResult(wordFrequencies);
             } catch (Exception e) {
                 return "Calculate Error";
             }
         }
     }
 
-    private static StringJoiner joinResult(List<WordFrequency> wordFrequencies) {
-        StringJoiner joiner = new StringJoiner(LINE_BREAK);
-        for (WordFrequency wordFrequency : wordFrequencies) {
-            String wordFrequencyExpression = wordFrequency.getWord() + " " + wordFrequency.getWordCount();
-            joiner.add(wordFrequencyExpression);
-        }
-        return joiner;
+    private static String joinResult(List<WordFrequency> wordFrequencies) {
+        return wordFrequencies.stream().map(wordFrequency -> wordFrequency.getWord() + " " + wordFrequency.getWordCount()).collect(Collectors.joining(LINE_BREAK)).toString();
     }
 
     private List<WordFrequency> getWordFrequencies(List<WordFrequency> wordFrequencies) {
